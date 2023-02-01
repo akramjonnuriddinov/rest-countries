@@ -1,16 +1,14 @@
 <template>
-  <TheHeader />
-  <TheMain />
+  <Header />
+  <router-view></router-view>
 </template>
 
 <script>
-import TheHeader from './components/TheHeader.vue';
-import TheMain from './components/TheMain.vue';
+import Header from './components/Header.vue';
 
 export default {
   components: {
-    TheHeader,
-    TheMain
+    Header
   }
 }
 </script>

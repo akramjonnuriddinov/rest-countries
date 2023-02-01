@@ -1,8 +1,8 @@
 <template>
   <div class="cart">
-    <img class="cart__img" src="https://picsum.photos/267/160" alt="" width="267" height="160">
+    <img class="cart__img" :src="country.flags.svg" :alt="country.name" width="267" height="160">
     <div class="cart__info">
-      <h3 class="cart__title">lorem</h3>
+      <h3 class="cart__title">{{country.name}}</h3>
       <p class="cart__text">
         <span class="cart__bold">Population: </span>
         <span class="cart__small">81,770,900</span>
@@ -21,24 +21,13 @@
 
 <script>
 export default {
-  name: 'App',
-  data() {
-    return {
-      KEY: `https://restcountries.com/v2/`,
-    }
-  },
-  mounted() {
-    this.setData();
-  },
-  methods: {
-    async getData(alfa) {
-      const result = await fetch(this.KEY + alfa);
-      return result.json()
-    },
-    setData() {
-      this.getData('alpha/uz').then((e) => console.log(e))
+  name: 'Card',
+  props: {
+    country: {
+      type: Object
     }
   }
+
 }
 </script>
 
