@@ -1,30 +1,68 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <TheHeader />
+  <TheMain />
 </template>
 
+<script>
+import TheHeader from './components/TheHeader.vue';
+import TheMain from './components/TheMain.vue';
+
+export default {
+  components: {
+    TheHeader,
+    TheMain
+  }
+}
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+
+:root {
+  --text-light: #111517;
+  --card-bg-light: #FFFFFF;
+  --shadow-light: #0000000E;
+  --main-bg-light: #FAFAFA;
+  --placeholder-light: #848484;
 }
 
-nav {
-  padding: 30px;
+.dark-mode {
+  --text-light: #ffffff;
+  --card-bg-light: #2B3844;
+  --shadow-light: #00000008;
+  --main-bg-light: #202C36;
+  --placeholder-light: #ffffff;
 }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
+html {
+  height: 100%;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
-nav a.router-link-exact-active {
-  color: #42b983;
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 400;
+  font-family: 'Nunito Sans', sans-serif;
+  background-color: var(--main-bg-light);
+}
+
+.container {
+  max-width: 1320px;
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
 }
 </style>
