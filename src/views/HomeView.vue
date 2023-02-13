@@ -18,7 +18,13 @@
       </div>
       <div class="container cart-container">
         <div class="countries__list">
-          <router-link :to="{name: 'about', params: {alphaCode: country.alpha2Code}}" v-for="country in countries" :key="country.alpha2Code" >
+          <router-link :to="{
+            name: 'about', 
+            params: {
+              alphaCode: country.alpha2Code
+            }}" 
+            v-for="country in countries" 
+            :key="country.alpha2Code" >
             <Card :country="country" />
           </router-link>
         </div>

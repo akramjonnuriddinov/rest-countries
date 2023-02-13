@@ -1,7 +1,9 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
-    <h1 v-if="country">{{country.name}}</h1>
+    <!-- <h1>This is an about page</h1> -->
+    <div class="container">
+      <h1 v-if="country">{{country.name}}</h1>
+    </div>
   </div>
 </template>
 <script>
@@ -18,7 +20,6 @@ export default {
   },
   methods: {
    async fetchCountry() {
-    console.log(this.alphaCode)
       const res = await axios.get('https://restcountries.com/v2/alpha/' + this.alphaCode)
       this.country = res.data
     }
